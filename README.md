@@ -14,5 +14,51 @@ If you've upgraded to 10.9 (Mac OSX Mavericks) from an earlier version (OSX 10.8
 	_( it will take some time )_
 
 	<img src="brew.png" alt="console" style="width: 500px;"/>
+5. After `brew doctor` I got some errors, but this is easily remedied by following the instructions `brew`
+<img src="brew2.png" alt="console" style="width: 500px;"/>
+6. `brew prune`
+7. `brew link --overwrite --dry-run libpng12`
+8. `brew link sdl_mixer`
+9. Enjoy the results
 
-5. Enjoy the results
+
+# Configure error: SDL_image with PNG support required
+
+Trying to compile gource-0.40.tar.gz on Mac OSX 10.9 Mavericks but `brew` an error:
+
+```
+checking for PCRE... yes
+checking for GLEW... yes
+checking for SDL... yes
+checking for IMG_LoadPNG_RW... no
+configure: error: SDL_image with PNG support required. Please see INSTALL
+
+READ THIS: https://github.com/mxcl/homebrew/wiki/troubleshooting
+
+These open issues may also help:
+    https://github.com/mxcl/homebrew/issues/23588
+    https://github.com/mxcl/homebrew/issues/20100
+
+```
+
+### Follow these steps
+
+Download SDL_image:
+
+```
+curl -O http://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.12.tar.gz
+```
+
+
+
+```
+export CFLAGS="$CFLAGS -I/sw" (if you're using bash)
+or
+setenv CFLAGS="$CFLASG -I/sw" (if you're using csh/ksh)
+
+download http://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.12.tar.gz
+
+./configure --enable-png --prefix=/usr/local
+make
+make install
+```
