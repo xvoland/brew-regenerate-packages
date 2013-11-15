@@ -7,7 +7,7 @@ If you've upgraded to 10.9 (Mac OSX Mavericks) from an earlier version (OSX 10.8
 
 # How to
 
-1. Clone `git clone git@github.com:xvoland/brew-regenerate-packages.git`
+1. Clone `git clone https://github.com/xvoland/brew-regenerate-packages.git`
 2. `cd brew-regenerate-packages`
 3. `chmod +x ./install.sh`
 4. Run a script `bash ./install.sh` from cloned directory
@@ -16,4 +16,3 @@ If you've upgraded to 10.9 (Mac OSX Mavericks) from an earlier version (OSX 10.8
 	<img src="brew.png" alt="console" style="width: 500px;"/>
 
 5. Enjoy the results
-
